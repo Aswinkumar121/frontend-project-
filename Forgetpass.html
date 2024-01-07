@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forget Password Page</title>
+    <link rel="stylesheet" href="./CSS/STYLE.CSS">
+    <style>
+        *{
+            
+            label:hover{
+                color: rgb(40, 3, 250);
+                font-weight:600;
+                border-color: brown;
+
+            }
+            button:hover{
+                border: red solid;
+                border-radius: 5px;
+                box-sizing: content-box;
+                box-shadow: 5px 5px 3px brown;
+            }
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-image: url(https://websitepeople.com.au/wp-content/uploads/2018/06/pattern-background.jpg);
+            a:hover{
+                color: rgb(162, 247, 5);
+                font-weight: 600;
+            
+            }
+        }
+      table{
+        width: fit-content;
+      }
+      footer{
+        margin-top: 118px;
+      }
+      #fooot{
+            margin: 0px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;   
+
+        }
+    #Fortable{
+        border-collapse: separate;
+        border-spacing: 20px;
+        background-color: rgb(100, 7, 250), 250;
+        color:rgb(243, 148, 6);
+        font-size: larger;
+        font-weight: 600;
+
+    }
+    </style>
+    <script>
+    function signup_valid(){
+
+         // Phone Number Validation
+         var Phone=document.getElementById("phone").value 
+        var flag_phone=false
+        if((6000000000<=Phone)&&(Phone<=9999999999)){
+            flag_phone=true
+        }
+
+
+        // Email Id Validation
+        var Email=document.getElementById("email").value 
+        var flag_email=false
+        for(var i=0;i<Email.length;i++){
+            if(Email[i]=='@'){
+                flag_email=true
+            }
+        }
+
+        // final validation
+
+        if((flag_phone==true)&&(flag_email==true)){
+            window.location.href='./signup otp verification.html'
+        }
+        else{
+            document.getElementById("err").innerHTML="Check Your Mobile Number & Email-ID"
+            document.getElementById("err").style.color="red"
+            document.getElementById("err").style.fontWeight="600"
+        }
+    }
+</script>
+</head>
+<body>
+    <h1>GiMe - Xpency</h1>
+
+  
+    <h2>Xpency - Forget Password Page</h2>
+    <br>
+    <center>
+    
+        <table id="Fortable" >
+            <tr>
+                <td>
+                    <label for ="Mobile number">Mobile Number</label>
+                </td>
+                <td>
+                    <input type="number" id="phone">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="email">E-Mail Id</label>
+                </td>
+                <td>
+                    <input type="email" id="email" >
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button onclick="signup_valid()">Send OTP</button> 
+                </td>
+            </tr>
+
+        </table> 
+        <p id="err"></p> 
+   
+  </center>
+
+    <footer>
+        <br>
+        <div>
+          Share Your Experience With Xpency<br>
+          <textarea placeholder="Feedback and your Experience with Us"></textarea>
+          <br><br>
+
+          <div id="fooot">
+            <a href="./about.html">About</a>
+             <a href="./terms.html">Terms and Policy</a> 
+             <a href="./Homepage.html">Home</a> India </div>
+          <br> 
+          &copy; 2023 Social Media. All rights reserved.
+        </div>
+        <br>
+      </footer>
+</body>
+</html>

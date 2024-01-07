@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>Login Page</title>
+    <link rel="stylesheet" href="./CSS/STYLE.CSS">
+    <style>
+        *{
+            background-color: transparent;
+        }
+        body{
+            background-color: hsla(69, 82%, 63%, 0.774);
+        }
+        footer{
+            margin-top: 100px;
+            background-color: rgb(157, 243, 214);
+            
+        }
+        #fooot{
+            margin: 0px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+    </style>
+    <script>
+        function login(){
+            var data={'aswin':'123', 'kumar':'12345',
+            'akaswin':'kumar123'}
+            var user1=document.getElementById("user").value
+            var pass1=document.getElementById("pass").value
+            var all_users=Object.keys(data)
+            var flag=false
+            for(var i=0;i<all_users.length;i++){
+                if((all_users[i]==user1)&&(data[all_users[i]]==pass1)){
+                    flag=true
+                }
+            }
+            if(flag==true){
+                window.location.href="https://www.facebook.com"
+            }else{
+                document.getElementById("err").innerHTML="Invalid Credentials"
+                document.getElementById("err").style.color='red'
+            }   
+
+        }
+    </script>
+</head>
+<body>
+    <h1>GiMe - Xpency</h1>
+    
+    <h2>Xpency</h2>
+    
+    <center>
+    <fieldset>
+        <legend>LOGIN OR SIGNUP</legend>
+
+
+        <table>
+            <tr>
+                <td><label for="Username">Credential ID </label></td>
+                <td><input type="text" placeholder="Username" required id="user"></td>
+            </tr>
+            <tr>
+                <td><label for="Password">Credential Password </label></td>
+                <td><input type="password" required placeholder="Your password" id="pass"></td>
+            </tr>
+        </table>
+        <br>
+        <button onclick="login()" id="login" style="width: fit-content;padding-right:5px;padding-left:5px;">Login</button>
+     
+    <p id="err"></p>
+             
+        <!-- codes for login and password credentials -->
+    <br>
+    <table>
+        <tr>
+           <td>Did you Forget Your Password..? </td> 
+           <td>Are you a New to User ?</td>
+        </tr>
+        <tr>
+            <td><a href="./Forgetpass.html"><button>Click Here</button></a>
+            </td>
+            <td><a href="./signup page.html">
+                <button>Signup</button>
+            </a></td>
+        </tr>
+    </table>
+    <!-- Ends forget password -->
+    <br>    
+</fieldset>
+</center>
+<footer>
+    <br>
+    <p>
+      Share Your Experience With Xpency<br>
+      <textarea placeholder="Feedback and your Experience with Us"></textarea><br><br>
+      <div id="fooot"><a href="./about.html">About</a> <a href="./terms.html">Terms and Policy</a> <a href="./Homepage.html">Home</a> India </div><br>
+      <br> 
+      &copy; 2023 Social Media. All rights reserved.
+    </p>
+    <br>
+  </footer>
+</body>
+</html>

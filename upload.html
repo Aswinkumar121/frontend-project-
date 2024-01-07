@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./CSS/STYLE.CSS">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+      *{
+        background-color: transparent;
+        transition: color 0.2s ease-in-out;        
+      }
+      *:hover {
+        
+        color: #e6c822; /* Change this to your desired hover color */
+      
+      }
+
+      body{
+        background-image:url(https://th.bing.com/th/id/R.3406375fc670228225e7bd3f10152fa5?rik=Ug3HkuUFbz3bPw&riu=http%3a%2f%2fkrisaru.com%2fwp-content%2fuploads%2f2011%2f11%2fbackground-website-light-blue-wallpapers-background.jpg&ehk=PTrzoSq3rf52d1PrVTU3jRiy7V6CYEmZLJJ9N2vMiXk%3d&risl=&pid=ImgRaw&r=0);
+        background-repeat:no-repeat; 
+        background-size: cover;
+        background-attachment: fixed;
+          
+      }
+      #fooot{
+            margin: 0px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+        footer{
+          margin-top: 100px;
+        }
+        #heading{
+          width: 1260px;
+          padding: 10px;
+          height: 20px;
+          text-align: center;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+          
+        }
+        fieldset{
+          margin-bottom: 100px;
+          box-shadow: 2px 4px 12px  rgb(224, 150, 150);
+             
+        }
+      
+        a:hover{
+          font-size: large;
+          font-weight: 600;
+        }
+        input:hover{
+          background-color: rgb(66, 66, 236);
+          border-radius: 10px;
+          
+        }
+
+    </style>
+</head>
+<body id="bbg">
+  <h1>GiMe - Xpency</h1>
+  <center>
+  <fieldset>
+    
+    <div id="heading">
+     
+        <a href="./Homepage.html" class="title">Home</a>
+      
+        <a href="./Expense tracker.html" class="title">Expense Tracker</a>
+    
+        <a href="./Your Piggy Bank.html" class="title">Your Piggy Bank </a>
+      
+        <a href="./upload.html" class="title">Create</a>
+      
+        <a href="./profil.html" class="title"><i class="fa-regular fa-user fa-xl"></i></a>
+      
+    </div>
+  
+  </fieldset>
+</center>
+  <br>
+    
+    <center>  
+    <fieldset id="upload">
+       
+        <div style="background-color: transparent;">
+        <input type="file" accept="image/*" id="file">
+        
+        <!-- Select image -->
+        
+       <input type="submit"  value="Upload">
+      </div>
+    </fieldset>
+    <h2>Post Your Strategy </h2>
+    </center>
+
+
+
+    <footer>
+      <br>
+        <p>
+          Share Your Experience With Xpency<br>
+          <textarea placeholder="Feedback and your Experience with Us"></textarea><br>
+          <div id="fooot"><a href="#">About</a> <a href="#">Terms</a> <a href="#">Policy</a> <a href="./Homepage.html">Home</a> <a href="#">India</a> </div>
+          <br> 
+          &copy; 2023 Social Media. All rights reserved.
+        </p>
+        <br>
+      </footer>
+</body>
+</html>

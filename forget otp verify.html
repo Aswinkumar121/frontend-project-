@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./CSS/STYLE.CSS">
+    <style>
+      a{
+        margin-left: 0px;
+        margin-top: 20px;
+      }
+      footer{
+        margin-top: 110px;
+      }
+      #fooot{
+            margin: 0px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+     
+    </style>
+    <script>
+      var otp=Math.floor(Math.random()*9999)
+      alert(otp)
+      flag_mob=false
+      var otp2=Math.floor(Math.random()*9999)
+      alert(otp2)
+      flag_email=false
+      function otp_verification(){
+          var user_otp=document.getElementById("phone").value 
+          if(user_otp==otp){
+              flag_mob=true
+          }
+
+          var user_otp2=document.getElementById("email").value 
+          if(user_otp2==otp2){
+              flag_email=true
+          }
+          if((otp==user_otp)&&(otp2==user_otp2)){
+              window.location.href="Newpassword Page.html"
+          }
+          else{
+          document.getElementById("error").innerHTML="Incorrect OTP"
+          }
+
+      }
+      function resend_otp(){
+          window.location.href="./signup otp verification.html"
+      }
+  </script>
+</head>
+<body>
+    <h1>GiMe - Xpency</h1>
+  
+    <h2>Xpency - Password OTP Verification </h2>
+    <br>
+    <form action="./Newpassword Page.html">
+      <center>
+        <table>
+            <tr>
+                <td><label for="Mobile OTP Number">Mobile OTP Number</label></td>
+                <td><input type="number" id="phone"></td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="E-Mail OTP Number">E-Mail OTP Number</label>
+                </td>
+                <td>
+                    <input type="number" id="email">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button onclick="otp_verification()">Verify</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <p id="error"></p>
+    <br>
+    <button onclick="resend_otp()">Resend OTP</button></a>
+  </center>
+
+    <footer>
+      <br>
+        <p>
+          Share Your Experience With Xpency<br>
+          <textarea placeholder="Feedback and your Experience with Us"></textarea>
+          <br>
+          <div id="fooot"><a href="./about.html">About</a> <a href="./terms.html">Terms and Policy</a> <a href="./Homepage.html">Home</a> India </div>
+          <br> 
+          &copy; 2023 Social Media. All rights reserved.
+        </p>
+        <br>
+      </footer>
+</body>
+</html>

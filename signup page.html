@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./CSS/STYLE.CSS">
+    <style>
+        *{
+            background-color: transparent;
+        }
+        body{
+            background-color: hsla(69, 82%, 63%, 0.774);
+        }
+        footer{
+            margin-top: 20px;
+            background-color: rgb(157, 245, 70);
+        }
+        table{
+            width: 680px;
+            margin-left: 50px;
+        }
+        label{
+            margin-top: 15px;
+            text-align: left;
+        }
+        .Last{
+           height: 100px;
+        }
+        #fooot{
+            margin: 0px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+        
+    </style>
+     <script>
+        function signup_validation(){
+
+            // Phone Number Validation
+            var Phone=document.getElementById("phone").value 
+            var flag_phone=false
+            if((6000000000<=Phone)&&(Phone<=9999999999)){
+                flag_phone=true
+            }
+
+
+            // Email Id Validation
+            var Email=document.getElementById("email").value 
+            var flag_email=false
+            for(var i=0;i<Email.length;i++){
+                if(Email[i]=='@'){
+                    flag_email=true
+                }
+            }
+
+
+            // Password Validation
+            var Password=document.getElementById("password").value 
+            var flag_password=false
+            var upper=0
+            var lower=0
+            var Num=0
+            var special=0
+            for(var i=0;i<Password.length;i++){
+                if(('A'<=Password[i])&&(Password[i]<='Z')){
+                    upper++
+                }else if(('a'<=Password[i])&&(Password[i]<='z')){
+                    lower++
+                }else if(('0'<=Password[i])&&(Password[i]<='9')){
+                    Num++
+                }else{
+                    special++
+                }
+            }
+            if((upper>=1)&&(lower>=1)&&(Num>=1)&&(special>=1)&&(Password.length>=8)&&(Password.length<=12)){
+                flag_password=true
+            }
+
+
+            // Confirm Password Validation
+            var confirm=document.getElementById("confirm").value 
+            var flag_confirm=false
+            if(Password==confirm){
+                flag_confirm=true
+            }
+
+
+            // Final Validation
+            if((flag_phone==true)&&(flag_email==true)&&(flag_password==true)&&(flag_confirm==true)){
+                window.location.href="signup verification  .html"
+            }
+            else{
+                    document.getElementById("error").innerHTML="Invalid Details"
+                    document.getElementById("error").style.color="red"
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <h1>GiMe - Xpency</h1>
+    <h2>Xpency - Signup Page</h2>
+    <br>
+    <center>
+        <table>
+            <tr>
+                <td>
+                    <label for="First Name" class="val1">First Name </label>
+                </td>
+                <td>
+                    <input type="text" placeholder="First name">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="Last Name" class="val1">Last Name </label>
+                </td>
+                <td>
+                    <input type="text" placeholder="Last name">
+                </td>
+            </tr>
+            <tr>
+                <td><label for="Email" class="val1" >Email</label></td>
+                <td><input type="email" placeholder="Your E-mail ID" id="email"></td>
+            </tr>
+            <tr>
+                <td><label for="Mobile Number" class="val1" >Mobile Number </label></td>
+                <td><input type="number" id="phone" placeholder="10-digit mobile number" ></td>
+            </tr>
+            <tr>
+                <td><label for="Password" class="val1" >Password</label></td>
+                <td><input type="password" placeholder="8-10 digit password" id="password"></td>
+            </tr>
+            <tr>
+                <td colspan="2" id="list">
+                    <ul style="font-size: 11px;">
+                        <li>Note: Your Password must be atleast 8 characters long.</li>
+                        <li>Atleast Your Password Should have one Number </li>
+                        <li>Atleast Your Password Should have one Alphabet </li>
+                        <li>Atleast Your Password Should have one Special Character</li>
+                    </ul>                
+                </td>
+            </tr>
+            <tr>
+                <td><label for="Confirm Password" class="val1" >Confirm Password </label></td>
+                <td><input type="text" id="confirm"></td>
+            </tr>
+            <tr>
+                <td class="val1">
+                    Your Occupation
+                </td>
+                <td >
+                    <select>
+                        <option>Select Occupation</option>
+                        <option>Student</option>
+                        <option> Laborer</option>
+                        <option>Factory Work</option>
+                        <option>Owner-Operator</option>
+                        <option>Self Employed</option>
+                        <option>Homemaker</option>
+                        <option>Unemployed</option>
+                        <option>Retired</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="val1">
+                    Expense type
+                </td>
+                <td colspan="2">
+                    <input type="checkbox">
+                    <label>Individual Expense</label>
+                    <input type="checkbox">
+                    <label>Domestic Expense</label>
+                    <input type="checkbox">
+                    <label id="be">Bussiness Expense</label>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="checkbox" id="checkbox" required><label for="checkbox">
+                        Do you Agree With a
+                         <a href="#">Terms and conditions</a>
+                    </label>
+                </td>
+            </tr>
+            <tr >
+                
+                <td class="Last"> <a href="./index.html"><button>Cancel</button></a></td>
+                <td class="Last">
+                    <button onclick="signup_validation()">Signup</button>
+                </td>
+           
+            </tr>        
+        </table>
+    </center>
+    <P id="error"></P>
+        <br><br>
+
+    <footer>
+        <br>
+        <p>
+          Share Your Experience With Xpency<br>
+          <textarea placeholder="Feedback and your Experience with Us"></textarea><br>
+          <div id="fooot"><a href="./about.html">About</a> <a href="./terms.html">Terms and Policy</a> <a href="./Homepage.html">Home</a> India </div>
+          <br> 
+          &copy; 2023 Social Media. All rights reserved.
+        </p>
+        <br>
+      </footer>
+</body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xpency - Track your Expenses with us</title>
+    <link rel="stylesheet" href="./CSS/STYLE.CSS">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
+            background-color: transparent;
+        }
+        body{
+      background:linear-gradient(rgb(237, 240, 69) 20%, rgb(231, 146, 89) 80%);
+     }
+        #table{
+            width: 1250px;
+            border-collapse: separate;
+            border-spacing: 30px;
+            text-align: center;
+            border: groove;
+            border-color: black;
+            height: fit-content;
+            background-color: rgb(205, 236, 153);
+        }
+        #tableofexp{
+            border-collapse: separate;
+            border-spacing: 40px;
+        }
+    
+        #addtitle{
+            font-size: larger;
+            font-weight: 200;
+            padding: 10px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        th{
+            text-align: left;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        #fooot{
+            margin: 0px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+        footer{
+            background:linear-gradient(rgb(243, 226, 220) 20%,rgb(157, 253, 12) 80%) ;
+            border-radius: 15px;
+            border: solid rgb(255, 99, 8);
+        }
+        #expensee{
+            border: 1px;
+            border-left: 20px;
+            border-radius: 20px;
+            border-color: black;
+            border-style: solid;
+            min-width: fit-content;
+        }
+    </style>
+</head>
+<body>
+    <h1>GiMe - Xpency</h1>
+    <center>
+    <table id="table">
+        <tr>
+          <td>
+            <a href="./Homepage.html" class="title">Home</a>
+          </td>
+          <td>
+            <a href="./Expense tracker.html" class="title">Expense Tracker</a>
+          </td>
+          <td>
+            <a href="./Your Piggy Bank.html" class="title">Your Piggy Bank </a>
+          </td>
+          <td>
+            <a href="./upload.html" class="title">Create</a>
+          </td>
+          <td>
+            <a href="./profil.html" class="title"><i class="fa-regular fa-user fa-xl"></i></a>
+            
+          </td>
+        </tr>
+      </table>
+    </center>
+      <br>
+  
+    <h2>Xpency - Track Your Day with Us</h2>
+
+
+    <center>
+    <div id="expensee">
+    <table  id="tableofexp">
+        <tr>
+            <td colspan="4" id="addtitle">Add Your Expenses Here </td>
+        </tr>
+        
+        <tr>
+            <th>
+                Type 
+            </th>
+            <td>
+                <select id="selectt">
+                    <option>choose one</option>
+                    <option>Cash</option>
+                    <option>UPI</option>
+                    <option>Card</option>
+                    <option>Others</option>
+                </select>
+            </td>
+            <th>
+                Amount 
+            </th>
+            <td>
+                <input type="text" id="amount" placeholder="Enter Your Budget">
+            </td>
+
+        </tr>
+        
+        <tr>
+            <th>Date </th>
+            <td>
+                <input type="date" id="date">
+            </td>
+            <th>
+                Savings Amount 
+            </th>
+            <td>
+                <input type="number" id="saving" placeholder="Enter Your Savings">
+            </td>
+        </tr>
+        
+        <tr>
+            <th>
+                Expense name 
+            </th>
+            <td>
+                <input type="text" id="xpense">
+            </td>
+            <th>
+                Savings Type 
+            </th>
+            <td>
+                <input type="text" name="save" id="savee" placeholder="Enter your Savings Type">
+                
+            </td>
+        </tr>
+        
+    </table>
+    <button onclick="tracker()" style="border-color: aqua; border-width: 3px; border-radius: 6px;">Add a New Expense</button>
+    <br><br> 
+    </div>
+    </center>
+    <br><br>
+    <center>
+    <table id="mytable">
+        <thead>
+            <tr>
+                <th >Type</th>
+                <th >Date</th>
+                <th >Expense Name</th>
+                <th >Amount</th>
+                <th >Savings</th>
+                <th >Savings Type</th>
+                <!-- daily or monthly -->
+            </tr>
+        </thead>
+            <tr>
+                
+                <td><div id="Distype"></div></td>
+                <td><div id="disdate"></div></td>
+                <td id="disexp"></td>
+                <td><div id="disamou"></div></td>
+                <td id="dissav"></td>
+                <td id="disst"></td>
+            </tr>
+        
+        
+    </table>
+    </center> 
+   <script>
+    function tracker() {
+    // Get form values
+    const type = document.getElementById("selectt").value;
+    const date = document.getElementById("date").value;
+    const amount = document.getElementById("amount").value;
+    const savingsAmount = document.getElementById("saving").value;
+    const expenseName = document.getElementById("xpense").value;
+    const savingsType = document.getElementById("savee").value;
+
+
+
+    const typed = document.getElementById("Distype").innerHTML=type;
+    const dated = document.getElementById("disdate").innerHTML= date;
+    const amountd = document.getElementById("disamou").innerHTML=amount;
+    const savingsAmountd = document.getElementById("dissav").innerHTML=savingsAmount;
+    const expenseNamed = document.getElementById("disexp").innerHTML=expenseName;
+    const savingsTyped = document.getElementById("disst").innerHTML=savingsType;
+
+}
+    
+
+   </script>
+    <footer>
+        <br>
+        <p>
+          Share Your Experience With Xpency<br>
+          <textarea placeholder="Feedback and your Experience with Us"></textarea>
+          <br><br>
+          <div id="fooot"><a href="./about.html">About</a> <a href="./terms.html">Terms and Policy</a> <a href="./Homepage.html">Home</a> India </div>
+          <br> 
+          &copy; 2023 Social Media. All rights reserved.
+        </p>
+        <br>
+      </footer>
+</body>
+</html>

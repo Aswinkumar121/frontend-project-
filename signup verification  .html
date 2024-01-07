@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./CSS/STYLE.CSS">
+    <script>
+        function signup_valid(){
+
+             // Phone Number Validation
+             var Phone=document.getElementById("phone").value 
+            var flag_phone=false
+            if((6000000000<=Phone)&&(Phone<=9999999999)){
+                flag_phone=true
+            }
+
+
+            // Email Id Validation
+            var Email=document.getElementById("email").value 
+            var flag_email=false
+            for(var i=0;i<Email.length;i++){
+                if(Email[i]=='@'){
+                    flag_email=true
+                }
+            }
+
+            // final validation
+
+            if((flag_phone==true)&&(flag_email==true)){
+                window.location.href='./signup otp verification.html'
+            }
+            else{
+                document.getElementById("err").innerHTML="Check Your Mobile Number & Email-ID"
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>GiMe - Xpency</h1>
+    <h2>Xpency - Signup OTP Verification </h2>
+    <br>
+    <center>
+        <table>
+            <tr>
+                <td>
+                    <label for="Mobile OTP Number">Mobile Number </label>
+                </td>
+                <td>
+                    <input type="number" id="phone">
+                </td>
+            </tr>
+            <tr><td><br></td></tr>
+            <tr>
+                <td>
+                    <label for="E-Mail OTP Number">E-Mail ID </label>
+                </td>
+                <td>
+                    <input type="email" id="email">
+                </td>
+            </tr>
+        </table>
+    
+        <br>
+        <p id="err"></p>
+        <br>
+            <button onclick="signup_valid()">Send OTP</button>
+            
+        </center>
+        
+</body>
+</html>
